@@ -10,3 +10,6 @@ Az actuator információt ad az alkalmazás állapotáról és működéséről.
 
 A static mappában lévő html fájlt, itt meg tudod nézni:
 http://localhost:8080/hello.html
+
+BootStrap
+https://getbootstrap.com/docs/5.3/layout/grid/
