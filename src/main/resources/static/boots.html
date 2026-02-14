@@ -11,6 +11,8 @@
             integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
             crossorigin="anonymous"
         />
+        <!--Általában a body végére szokták rakni, hogy a html betöltése után töltsön be. 
+        A defer segítségével letölti a scriptet azonnal, de csak a HTML betöltése után futtatja.-->
         <script src="/js/script.js" defer></script>
         <!--A https://getbootstrap.com/ CDN részről illeszd be az alábbi linket.-->
         <link
@@ -68,7 +70,8 @@
             </div>
             <div class="row">
                 <aside>
-                    Sed <a id="mylink" href="www.youtube.com">LINK</a> pharetra
+                    Sed
+                    <a id="mylink" href="www.youtube.com">Youtube</a> pharetra
                     diam leo. Donec quis quam vel ipsum ullamcorper vehicula.
                     Duis odio ligula, luctus non nulla sit amet, egestas tempus
                     libero. Donec vestibulum arcu lectus, eget facilisis sem
@@ -117,7 +120,8 @@
             <hr />
             <!--Vízszintes vonal.-->
             <form action="/process" method="post">
-                <!--Az action azt mondja a böngészőnek: amikor a felhasználó elküldi a formot, az adatokat ide küldjük a szerver felé. Itt a /process a szerver oldali endpoint, ami fogja feldolgozni az adatokat.-->
+                <!--Az action azt mondja a böngészőnek: amikor a felhasználó elküldi a formot, 
+                az adatokat ide küldjük a szerver felé. Itt a /process a szerver oldali endpoint, ami fogja feldolgozni az adatokat.-->
                 <fieldset>
                     <legend>Registration</legend>
                     <label for="fname">First Name:</label>

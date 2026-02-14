@@ -1,4 +1,6 @@
-// var n = window.prompt("name?","Bobby")
+//A prompt a felugró ablak. A "name" egy címke, a "Bobby" egy input mező.
+var name = window.prompt("What's your name?", "Bobby");
+window.alert("Hello " + name + "!");
 // console.log("hello " + n)
 
 // for (var i=0; i<10; i++){
