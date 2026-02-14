@@ -1,15 +1,20 @@
 //A prompt a felugró ablak. A "name" egy címke, a "Bobby" egy input mező.
-var name = window.prompt("What's your name?", "Bobby");
-window.alert("Hello " + name + "!");
+//var name = window.prompt("What's your name?", "Bobby");
+//window.alert("Hello " + name + "!");
 // console.log("hello " + n)
 
-// for (var i=0; i<10; i++){
-//     console.log(i)
+//for ciklus:
+// for (var j=0; j<10; j++){
+//     console.log(j)
 // }
 
-// console.log(i)
+// for (let i=0; i<10; i++){
+//     console.log(i)
+// }
+// console.log(i)//Hibaüzenetet kapunk, mert a let-el deklarált változó, csak a scope-n belül létezik.
 
-// objects
+// A böngészőben van egy JS objektumom (objects):
+//Adatcserére jó.
 
 var person = {
     name: "bobby",
@@ -30,14 +35,14 @@ var person = {
 
 // function myfunc(){
 //     console.log('hello world')
-//     console.log(a)
+//     console.log(a) //Az 'a' változó elérhető ebben a scope-ban (kapcsos zárójelek között) is.
 // }
 
 // var myfunc2 = function(){
 //     console.log('hello world 2')
 // }
 
-// myfunc2()
+// myfunc2() //Függvény meghívás.
 
 // callbacks
 

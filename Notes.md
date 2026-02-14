@@ -10,6 +10,14 @@ Az actuator információt ad az alkalmazás állapotáról és működéséről.
 
 A static mappában lévő html fájlt, itt meg tudod nézni:
 http://localhost:8080/hello.html
+http://localhost:8080/boots.html
+stb.
 
 BootStrap
 https://getbootstrap.com/docs/5.3/layout/grid/
+
+Javascript:
+//A prompt a felugró ablak. A "name" egy címke, a "Bobby" egy input mező.
+//var name = window.prompt("What's your name?", "Bobby");
+//window.alert("Hello " + name + "!");
+// console.log("hello " + n)
