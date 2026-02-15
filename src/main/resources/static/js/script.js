@@ -25,6 +25,7 @@ var person = {
         street: "fake st",
     },
     speak: function (words) {
+        //Metódus.
         console.log(words);
     },
 };
@@ -55,7 +56,10 @@ var person = {
 //     i++
 // },1000)
 
-// person.speak("hello")
+//person.speak("hello");
+
+//Egy komponens id-jára, így kell hivatkozni:
+//document.getElementById("fname");
 
 // window.addEventListener('keypress',processKey)
 
@@ -63,9 +67,18 @@ var person = {
 //     console.log(evt.key)
 // }
 
+//Ez dinamikus:
 var button = document.querySelector('input[value="SuBmIt"]');
+
+//A kattintás eseményhez rendelünk egy metódust.
 button.addEventListener("click", function (evt) {
+    //Nem csinál semmit, ha megnyomjuk a gombot.
     evt.preventDefault();
+
+    //A First Name input mező értéke.
     var text = document.getElementById("fname").value;
-    document.getElementsByTagName("legend")[0].innerHTML = text;
+
+    //A Registration szöveget változtatja meg.
+    document.getElementsByTagName("legend")[0].innerHTML =
+        "Hello " + text + "!";
 });
