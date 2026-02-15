@@ -1,18 +1,17 @@
-# Build stage
-#Lefordítom és becsomagolom az alkalmazásomat.
-#A java verziót a pom.xml fájlban láthatod.
+# Build stage: a projekt lefordítása és JAR csomagolása Maven segítségével.
+# Java verzió a pom.xml-ben van beállítva (Java 17).
 FROM maven:3.8.5-openjdk-17 AS build
 WORKDIR /app
 COPY . .
 RUN mvn clean package -DskipTests
 
-# Run stage
-#Ez a konténer lesz,a hol fut az app.
+# Run stage: ez a konténer fogja futtatni az alkalmazást.
 FROM openjdk:17.0.1-jdk-slim
 WORKDIR /app
 #jar fájl adtunk meg a start.spring.io oldalon. A build szó a fentebb létrehozott stage-ra utal.
+# A JAR fájl a build stage-ből kerül ide.
 COPY --from=build /app/target/demo-0.0.1-SNAPSHOT.jar demo.jar
-#Ezen a porton futott offline a java servlet.
+# A Spring Boot alkalmazás a 8080-as porton fut.
 EXPOSE 8080 
-#Belépési pont:
+# ENTRYPOINT: a konténer indításakor a JAR futtatása.
 ENTRYPOINT ["java","-jar","demo.jar"]

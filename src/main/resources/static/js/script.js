@@ -67,18 +67,65 @@ var person = {
 //     console.log(evt.key)
 // }
 
-//Ez dinamikus:
-var button = document.querySelector('input[value="SuBmIt"]');
+// ===================== Submit gomb =====================
+var sumbitButton = document.querySelector('input[value="SuBmIt"]');
 
 //A kattintás eseményhez rendelünk egy metódust.
-button.addEventListener("click", function (evt) {
+sumbitButton.addEventListener("click", function (evt) {
     //Nem csinál semmit, ha megnyomjuk a gombot.
     evt.preventDefault();
 
     //A First Name input mező értéke.
     var text = document.getElementById("fname").value;
 
-    //A Registration szöveget változtatja meg.
-    document.getElementsByTagName("legend")[0].innerHTML =
-        "Hello " + text + "!";
+    //A Registration szöveget változtatja meg arra, hogy Hello+ a megadott keresztnév.
+    var regLabel = document.getElementsByTagName("legend")[0];
+
+    regLabel.innerHTML = "Hello " + text + "!";
+
+    // Szín lekérése
+    var selectedColor = document.getElementById("colorInput").value;
+
+    // Legend színének beállítása a kiválasztott színre
+    regLabel.style.color = selectedColor;
+
+    console.log("Legend színe most: " + selectedColor);
 });
+
+// ===================== Counter gomb =====================
+//Ez counter gomb JS-es megvalósítása:
+/*
+var counterButton = document.querySelector('button[value="counterButton"]');
+
+//counterFunc() esetén egyből meghívásra kerülne, ezért nem kell ()
+counterButton.addEventListener("click", counterFunc);
+
+//Metódus.
+function counterFunc(evt) {
+    //Nem csinál semmit, ha megnyomjuk a gombot.
+    evt.preventDefault();
+    console.log("counterButton megnyomva!");
+
+    //Megpróbáljuk lekérni a HTML-ben lévő elemet, ami a számlálót jeleníti meg.
+    let counterDisplay = document.getElementById("counterDisplay");
+
+    //Ellenőrizzük, hogy létezik-e a számláló elem.
+    if (!counterDisplay) {
+        counterDisplay = document.createElement("p"); //Létrehozunk egy új <p> elemet.
+        counterDisplay.id = "counterDisplay"; //Adunk neki id-t, hogy könyebben hivatkozzunk rá.
+        counterButton.parentElement.insertBefore(counterDisplay, counterButton); //insertBefore-al a gomb elé rakjuk. ..(új komponens, komponens id ami elé rakjuk)
+        counterDisplay.textContent = "0";
+    }
+    counterDisplay.textContent = parseInt(counterDisplay.textContent) + 1;
+}
+    */
+
+var counterButton = document.querySelector('button[value="counterButton"]');
+
+//counterFunc() esetén egyből meghívásra kerülne, ezért nem kell ()
+counterButton.addEventListener("click", counterFunc);
+
+//Metódus.
+function counterFunc(evt) {
+    console.log("counterButton megnyomva!");
+}
