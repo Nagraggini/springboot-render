@@ -18,37 +18,35 @@
             <div class="row justify-content-center">
                 <!--sor-->
                 <div class="col-md-4">
-                    <!--4 oszlop.-->
                     <h1>USERS</h1>
-                    <ul>
-                        <!--th =thymeleaf
+
+                    <!--th =thymeleaf
                         each=foreach
                         us a modelből jön.
                         Végigmegyünk a us listán, minden elem user néven lesz elérhető a <li>-ban.-->
-                        <li th:each="user:${us}">
-                            <!--Dinamikusan beállítjuk a betűméretet. A modelből vesszük a betűméretet.-->
-                            <span
+                    <table class="table table-info table-striped">
+                        <tr>
+                            <td>Username</td>
+                            <td>Password</td>
+                        </tr>
+
+                        <tr th:each="user:${us}">
+                            <td
                                 th:style="'font-size:'+${user.size}+'pt'"
                                 th:text="${user.name}"
-                            ></span>
-                            <br />
-                            <!--A Thymeleaf automatikusan HTML-escape-eli a szöveget, így biztonságosabb.
-                            Thymeleaf automatikusan lecseréli a veszélyes karaktereket HTML entitásokra, vagyis Így a böngésző nem <bobby>-ként értelmezi tagként, hanem szövegként jeleníti meg-->
-                            <span th:text="${user.password}"></span>
-                            <!--th:switch vizsgálja a user.name értékét.-->
-                            <div th:switch="${user.name}">
-                                <span th:case="'Andi'"
-                                    >HEY! It's the instructor!!!</span
-                                >
-                                <span th:case="'Steve'"
-                                    >Uh oh! It's Steve!</span
-                                >
-                                <!--Ez a default ág:-->
-                                <span th:case="*">General user</span>
-                            </div>
-                        </li>
-                    </ul>
+                            ></td>
+                            <td th:text="${user.password}"></td>
+                        </tr>
+                    </table>
                 </div>
+            </div>
+
+            <div class="container text-center mt-5">
+                <form action="/add.html" method="post">
+                    <button type="submit" class="btn btn-primary mt-3">
+                        Back
+                    </button>
+                </form>
             </div>
         </main>
     </body>
