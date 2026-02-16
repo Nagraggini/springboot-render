@@ -3,6 +3,7 @@ package demo.demo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+//Itt menj rá felül a start gombra.
 //http://localhost:8080/boots.html
 //Ha ezt látod: Completed initialization Akkor indult el a local szerver.
 

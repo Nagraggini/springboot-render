@@ -31,10 +31,8 @@
                         </tr>
 
                         <tr th:each="user:${us}">
-                            <td
-                                th:style="'font-color:'+${user.color}"
-                                th:text="${user.name}"
-                            ></td>
+                            <!--th:style="'font-color:'+${user.color}"-->
+                            <td th:text="${user.name}"></td>
                             <td th:text="${user.nickname}"></td>
                         </tr>
                     </table>
