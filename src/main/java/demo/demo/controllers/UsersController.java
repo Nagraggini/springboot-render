@@ -69,6 +69,8 @@ public class UsersController {
         int newSize = Integer.parseInt(newuser.get("size"));
 
         // Ezzel mentjük az adatbázisba a sort. Kb egy INSERT INTO ...
+        // Ez az ORM (Object-Relational Mapping). Az ORM (itt a Spring Data JPA) kezeli
+        // az objektum → adatbázis leképezést.
         userRepo.save(new User(newName, newPwd, newSize));
         response.setStatus(201); // Beállítja a HTTP válasz státuszkódját 201-re, vagyis Created.
 
