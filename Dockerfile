@@ -8,10 +8,13 @@ RUN mvn clean package -DskipTests
 # Run stage: ez a konténer fogja futtatni az alkalmazást.
 FROM openjdk:17.0.1-jdk-slim
 WORKDIR /app
+
 #jar fájl adtunk meg a start.spring.io oldalon. A build szó a fentebb létrehozott stage-ra utal.
 # A JAR fájl a build stage-ből kerül ide.
-COPY --from=build /app/target/demo-0.0.1-SNAPSHOT.jar demo.jar
+COPY --from=build /app/target/*.jar demo.jar
+
 # A Spring Boot alkalmazás a 8080-as porton fut.
 EXPOSE 8080 
+
 # ENTRYPOINT: a konténer indításakor a JAR futtatása.
 ENTRYPOINT ["java","-jar","demo.jar"]
