@@ -74,9 +74,9 @@ public class UsersController {
         userRepo.save(new User(newName, newPwd, newSize));
         response.setStatus(201); // Beállítja a HTTP válasz státuszkódját 201-re, vagyis Created.
 
-        // Ez visszaad egy HTML oldalt. A Spring megkeresi ezt:
-        // /templates/users/addedUser.html
-        return "users/addedUser";
+        // Ez visszaad egy HTML oldalt. A Spring megkeresi ezt: templates/users/
+        // Átirányítás a listázó oldalra.
+        return "redirect:/users/view";
     }
 
 }
