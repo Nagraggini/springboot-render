@@ -32,10 +32,10 @@
 
                         <tr th:each="user:${us}">
                             <td
-                                th:style="'font-size:'+${user.size}+'pt'"
+                                th:style="'font-color:'+${user.color}"
                                 th:text="${user.name}"
                             ></td>
-                            <td th:text="${user.password}"></td>
+                            <td th:text="${user.nickname}"></td>
                         </tr>
                     </table>
                 </div>

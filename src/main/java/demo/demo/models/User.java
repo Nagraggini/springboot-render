@@ -20,20 +20,21 @@ public class User {
 
     // Változók:
     private String name;
-    private String password;
-    private int size;
+    private String nickname;
+    private String color;
 
     // Jobb klikk itt Source Actions -> Generate Constructor
-    // konstruktorok, getter/setterek
+    // konstruktorok
     public User() {
     }
 
-    public User(String name, String password, int size) {
+    public User(String name, String nickname, String color) {
         this.name = name;
-        this.password = password;
-        this.size = size;
+        this.nickname = nickname;
+        this.color = color;
     }
 
+    // getter/setterek
     public String getName() {
         return name;
     }
@@ -42,20 +43,20 @@ public class User {
         this.name = name;
     }
 
-    public String getPassword() {
-        return password;
+    public String getNickname() {
+        return nickname;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
     }
 
-    public int getSize() {
-        return size;
+    public String getColor() {
+        return color;
     }
 
-    public void setSize(int size) {
-        this.size = size;
+    public void setColor(String color) {
+        this.color = color;
     }
 
     // Jobb klikk itt Source Actions -> Generate Constructor
