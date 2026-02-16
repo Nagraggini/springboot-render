@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>All user</title>
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
             rel="stylesheet"
@@ -27,22 +27,28 @@
                     <table class="table table-info table-striped">
                         <tr>
                             <td>Username</td>
-                            <td>Password</td>
+                            <td>Nickname</td>
                         </tr>
-
+                        <!--Ez egy foreach:-->
                         <tr th:each="user:${us}">
-                            <!--th:style="'font-color:'+${user.color}"-->
-                            <td th:text="${user.name}"></td>
-                            <td th:text="${user.nickname}"></td>
+                            <td
+                                th:style="'background-color:'+${user.color}"
+                                th:text="${user.name}"
+                            ></td>
+                            <td
+                                th:style="'background-color:'+${user.color}"
+                                th:text="${user.nickname}"
+                            ></td>
                         </tr>
                     </table>
                 </div>
             </div>
 
             <div class="container text-center mt-5">
-                <form action="/add.html" method="post">
+                <!--Fontos, hogy get legyen a method, mert az add.html egy statikus oldal.-->
+                <form action="/add.html" method="get">
                     <button type="submit" class="btn btn-primary mt-3">
-                        Back
+                        Back and Add a new user
                     </button>
                 </form>
             </div>

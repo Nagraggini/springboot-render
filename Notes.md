@@ -195,8 +195,13 @@ SELECT \* FROM products;
 
 A vs code-ban a pom.xml-hez adjuk hozzá a postgresql drivert. Jobb klikk a pom.xml-en -> Add Starts.. -> Postgresql Driver -> Enter -> Proceed.
 
-Gyorsabb módszer, hogy módosítsd az adatbázist:
+## Gyorsabb módszer, hogy módosítsd az adatbázist:
+
 A terminálba másold be a render.com-rül a PSQL Command-ot.
+PGPASSWORD=sekoojWQ5YUGrgC3080avcnkVvgY4LSQ psql -h dpg-d69k87buibrs739i5fu0-a.frankfurt-postgres.render.com -U database_olpd_user database_olpd
+
+Minden adat törlése:
+DELETE FROM users;
 
 A táblát így tudod csekkolni a terminálban:
 \d users
