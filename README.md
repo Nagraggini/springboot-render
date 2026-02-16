@@ -16,7 +16,7 @@ Deployed on February 15, 2026 at 10:56 AM.
 
 It was running locally before, and now it's accessible online.
 
-[Visit my site!](https://spring-render-s4f4.onrender.com/boots.html)
+[Visit my site!](https://spring-render-s4f4.onrender.com/add.html)
 
 # I used:
 
@@ -56,7 +56,7 @@ H2 Database (data)
 ./mvnw clean spring-boot:run
 ```
 
-### Docker használata
+### How tó ide Docker?
 
 ```bash
 docker build -t springboot-render .
@@ -97,7 +97,7 @@ Telepítve: 2026. február 15., 10:56.
 
 Korábban csak lokálisan futott, most már online is elérhető.
 
-[Látogasd meg az oldalam!](https://spring-render-s4f4.onrender.com/boots.html)
+[Látogasd meg az oldalam!](https://spring-render-s4f4.onrender.com/add.html)
 
 # Amit használtam:
 
