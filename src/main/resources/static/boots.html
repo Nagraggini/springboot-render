@@ -87,25 +87,12 @@
                     />
                 </fieldset>
             </form>
-
-            <div class="counter">
-                <h2>Counter</h2>
-                <!--Spring Boot Thymeleaf kiértékeli a Model-ből, és megjeleníti a session értékét.-->
-                <p id="counterDisplay">${count}</p>
-                <!-- Itt jelenik meg a számláló -->
-                <!--A gomb POST kérést küld a /counter-re.-->
-                <form action="/counter" method="post">
-                    <!--A szerver növeli a count-ot a sessionben, majd redirect a / → újratöltve a friss érték látszik.-->
-                    <button class="btn btn-success" type="submit">
-                        Plus +1
-                    </button>
-                </form>
-            </div>
         </main>
 
-        <footer class="text-center mt-4 py-3 bg-light">&copy; 2026</footer>
         <a href="https://github.com/Nagraggini/springboot-render"
             >Forráskódok</a
         >
+
+        <footer class="text-center mt-4 py-3 bg-light">&copy; 2026</footer>
     </body>
 </html>

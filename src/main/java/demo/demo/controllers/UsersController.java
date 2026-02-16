@@ -1,18 +1,26 @@
 package demo.demo.controllers;
 
 //ArrayList-hez:
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
-import demo.demo.models.Users;
+import demo.demo.models.User;
+import demo.demo.models.UserRepository;
+import jakarta.servlet.http.HttpServletResponse;
 
 // Ez a kontroller figyeli a szervert, és lehetővé teszi, hogy információkat kapjunk a felhasználókról.
 @Controller
 public class UsersController {
+
+    @Autowired
+    private UserRepository userRepo;
 
     // Ez a metódus akkor fut le, ha a felhasználó HTTP GET kérést küld a
     // /users/view URL-re.
@@ -27,15 +35,10 @@ public class UsersController {
         // adatokat küldünk a HTML template-nek (Thymeleaf, JSP, stb.).
         System.out.println("Getting all users.");
 
-        // TODO: get all users from database
-        // Példányosítás.
-        List<Users> users = new ArrayList<>();
-        // Konstruktor hívás a példányok hozzáadsáshoz:
-        users.add(new Users("Andi", "1234", 25));
-        users.add(new Users("Steve", "1234", 25));
-        users.add(new Users("Sara", "1234", 30));
+        // Mindegyik felhasználó lekérése az adatbázisból.
+        List<User> users = userRepo.findAll();
+        // Vége az adatbázis meghívásnak.
 
-        // end of databse call
         // A modellhez hozzáadjuk az adatokat.
         // "us" – ez a név, amin keresztül a template-ben el tudjuk érni.
         model.addAttribute("us", users);
@@ -46,6 +49,32 @@ public class UsersController {
         // MVC feldolgoz és a böngészőnek renderel.
         return "users/showAll";
         // A böngésző nem kapja közvetlenül a Model objektumot, csak a renderelt HTML-t.
+    }
+
+    // Ez a metódus a Spring Boot backend egyik endpointja, amely fogadja a HTML
+    // form által küldött adatokat, majd elmenti az adatbázisba.
+    @PostMapping("/users/add") // Ez definiál egy HTTP endpointot, ami az add.html fájlban van.
+
+    // @RequestParam Map<String, String> newuser -> Összegyűjti a form mezőket egy
+    // Map-be.
+    // A newuser -> Egy kulcs-érték lista.
+    // HttpServletResponse response -> Ez a HTTP válasz objektum.
+    public String addUser(@RequestParam Map<String, String> newuser, HttpServletResponse response) {
+
+        System.out.println("ADD user");
+
+        // A html-ben lévő name attribútumra hivatkozunk a jobb oldalon.
+        String newName = newuser.get("name");
+        String newPwd = newuser.get("password");
+        int newSize = Integer.parseInt(newuser.get("size"));
+
+        // Ezzel mentjük az adatbázisba a sort. Kb egy INSERT INTO ...
+        userRepo.save(new User(newName, newPwd, newSize));
+        response.setStatus(201); // Beállítja a HTTP válasz státuszkódját 201-re, vagyis Created.
+
+        // Ez visszaad egy HTML oldalt. A Spring megkeresi ezt:
+        // /templates/users/addedUser.html
+        return "users/addedUser";
     }
 
 }

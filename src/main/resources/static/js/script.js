@@ -119,13 +119,3 @@ function counterFunc(evt) {
     counterDisplay.textContent = parseInt(counterDisplay.textContent) + 1;
 }
     */
-
-var counterButton = document.querySelector('button[value="counterButton"]');
-
-//counterFunc() esetén egyből meghívásra kerülne, ezért nem kell ()
-counterButton.addEventListener("click", counterFunc);
-
-//Metódus.
-function counterFunc(evt) {
-    console.log("counterButton megnyomva!");
-}
