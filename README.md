@@ -1,4 +1,4 @@
-# Demo
+# Spring Boot Render Demo
 
 ```
   .   ____          _            __ _ _
@@ -48,11 +48,47 @@ Service / Business Logic
 ▼  
 H2 Database (data)
 
----
+## Lokális futtatás
+
+### Maven
+
+```bash
+./mvnw clean spring-boot:run
+```
+
+### Docker használata
+
+```bash
+docker build -t springboot-render .
+docker run -p 8080:8080 springboot-render
+```
+
+## Endpoints
+
+| Endpoint           | Description                              |
+| ------------------ | ---------------------------------------- |
+| `/`                | Main – start of the website              |
+| `/boots.html`      | Example static/dynamic page              |
+| `/users/view`      | List of users (if UserController exists) |
+| `/actuator/health` | Health check endpoint (Spring Actuator)  |
+
+# Technologies
+
+- Java 17
+- Spring Boot
+- Thymeleaf
+- H2 Database
+- Docker
+
+## //////////////////////////////////////////////////////////////////////////////////////////////
 
 Hungarian version - Magyar verzió
 
-# Demo
+# Spring Boot Render Demo
+
+Ez egy egyszerű Spring Boot webalkalmazás, ami Thymeleaf sablonokat és beágyazott H2 adatbázist használ.
+
+A projekt célja, hogy bemutassa a dinamikus webalkalmazás készítését Spring Boot-tal, és hogy deploy-olható legyen Dockerrel Render.com-on.
 
 ## Dinamikus webalkalmazás mérföldkő
 
