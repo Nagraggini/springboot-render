@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -31,12 +31,14 @@
                         </tr>
                         <!--Ez egy foreach:-->
                         <tr th:each="user:${us}">
+                            <!--Ha fekete a color értéke, akkor fehérek lesznek a betűk.-->
                             <td
-                                th:style="'background-color:'+${user.color}"
+                                th:style="'background-color:' + ${user.color} + '; color:' + (${user.color} == '#000000' ? 'white' : 'black')"
                                 th:text="${user.name}"
                             ></td>
+
                             <td
-                                th:style="'background-color:'+${user.color}"
+                                th:style="'background-color:' + ${user.color} + '; color:' + (${user.color} == '#000000' ? 'white' : 'black')"
                                 th:text="${user.nickname}"
                             ></td>
                         </tr>

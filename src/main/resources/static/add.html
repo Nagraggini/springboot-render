@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -59,7 +59,13 @@
                                 value="SEND"
                             />
                         </div>
-                        <br />
+                    </form>
+                    <br />
+
+                    <!--Ezen nézheted meg a felhasználók listáját: 
+    http://localhost:8080/users/view-->
+
+                    <form action="/users/view" method="get">
                         <div class="d-grid gap-2">
                             <input
                                 class="btn btn-success"
