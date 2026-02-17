@@ -1,10 +1,55 @@
 # Spring Boot
 
-[Ez alapján csináltam](https://www.youtube.com/watch?v=RK6aAjUMcl0&list=PLg7lel5LdVjyO7jk-4biyr0fqPVygTLOk)
+[Ez alapján csináltam.](https://www.youtube.com/watch?v=RK6aAjUMcl0&list=PLg7lel5LdVjyO7jk-4biyr0fqPVygTLOk)
 
 [A fenti youtube videóhoz tartozó repo.](https://github.com/bobbychansfu/springboot-render/tree/7d38d0343465661adceb6372591a8353717dfd5e)
 
-Ha elindítod a java fájlt, akkor a böngészőbe írd be ezt: http://localhost:8080/actuator
+További link:
+[Spring MVC Beginner](https://www.youtube.com/watch?v=VqptK6_icjk&list=PL82C6-O4XrHejlASdecIsroNEbZFYo_X1)
+
+[Fejlesztői környezet és kiegészítők letöltése](https://code.visualstudio.com/docs/java/java-spring-boot)
+
+A vs code extension részen ezeket töltsd le:
+
+- Java Development Kit (JDK)
+- Extension Pack for Java
+- Spring Boot Extension Pack
+- Spring Boot Tools
+- Spring Initializr
+
+# Új projekt létrehozása
+
+## Új projekt létrehozása hosszabb módszer
+
+ctrl+shift+P -> Spring Initializr: Create a Maven Project..-> 3.0.6 -> Java -> add meg a projekt nevét (Ezt kell majd megadni a https://start.spring.io/ artifact részen is!) -> jar (package típus) -> 17 (muszály a Docker image miatt) ->
+
+Dependenciák : Spring Boot Actuator Ops, Spring Web, Spring Session, Spring Data JPA SQL, JDBC API, H2 Database SQL, Thymeleaf, Spring BootDevTools.
+
+## Új projekt létrehozása könnyebbik módszer
+
+Előre konfigurált Spring Boot projektet lehet generáltatni, hogy ne kelljen kézzel megírni az összes kezdő fájlt és beállítást: [Spring Initializr](https://start.spring.io/)
+
+Project: Maven
+Language: Java
+Spring Boot: 4.0.2
+Artifact és Name: projektneve, amit az elején megadtál.
+Packaging: Jar (Ugyanaz, amit az elején megadtál.)
+Conf: Properties
+Java: 17 (Ugyanaz, amit az elején megadtál.)
+
+Dependenciák:
+Spring Boot DevTools
+Spring Web
+Spring Session for JDBC
+Thymeleaf
+Spring Data JPA
+Spring Data JDBC
+H2 Database
+PostgreSQL Driver
+
+# Projekt futtatása
+
+Ha elindítod a java fájlt (projektneveApplication.java), akkor a böngészőbe írd be ezt: http://localhost:8080/actuator
 
 A dependenciák közt fel vettek az actuatort, ezzel le tudod csekkolni magad.
 Az actuator információt ad az alkalmazás állapotáról és működéséről.
@@ -15,19 +60,18 @@ Ha több információt akarsz, a application.properties-ben beállíthatod, pl.:
 management.endpoints.web.exposure.include=\*
 
 A static mappában lévő html fájlt, itt meg tudod nézni:
-http://localhost:8080/hello.html
-http://localhost:8080/boots.html
-stb.
+http://localhost:8080/add.html
 
-BootStrap
-https://getbootstrap.com/docs/5.3/layout/grid/
+showAll.html:
+http://localhost:8080/users/view
+
+# BootStrap stílus használata
+
+[BootStrap](https://getbootstrap.com/docs/5.3/layout/grid/)
 
 Használhatod a CDN-t a HTML-ben:
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-Előre konfigurált Spring Boot projektet lehet generáltatni, hogy ne kelljen kézzel megírni az összes kezdő fájlt és beállítást:
-https://start.spring.io/
 
 # CI/CD (Continuous Integration / Continuous Deployment) folyamat:
 
@@ -81,10 +125,10 @@ A templates mappában találhatók a view-k, vagyis a kinézetek.
 A models mappában lévő java fájlokkal kezeljük a felhasználókat. (vagy objektumokat, szolgáltatásokat)
 A controllers figyeli a szervert, és lehetővé teszi, hogy információkat kapjunk a felhasználókról.
 
-UserController.java vizuális ábrán:
-[Felhasználó / Kliens]
-|
-| GET http://localhost:8080/users/view
+UserController.java vizuális ábrán:  
+[Felhasználó / Kliens]  
+|  
+| GET http://localhost:8080/users/view  
 v
 
 ---
@@ -226,4 +270,4 @@ Repository
 Database  
  │  
  ▼  
-HTML response: addedUser.html
+HTML response: showAll.html

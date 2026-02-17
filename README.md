@@ -80,7 +80,7 @@ docker run -p 8080:8080 springboot-render
 - H2 Database
 - Docker
 
-## //////////////////////////////////////////////////////////////////////////////////////////////
+## ////////////////////////////////////////////////////////////////////////////////////
 
 Hungarian version - Magyar verzió
 
@@ -128,3 +128,5 @@ Service / Üzleti logika
 │  
 ▼  
 H2 adatbázis (adatok)
+
+[Itt találod a részletes leírást, mit és hogyan csináltam.](https://github.com/Nagraggini/springboot-render/blob/main/Notes.md)
