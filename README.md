@@ -129,4 +129,4 @@ Service / Üzleti logika
 ▼  
 H2 adatbázis (adatok)
 
-[Itt találod a részletes leírást, mit és hogyan csináltam.](https://github.com/Nagraggini/springboot-render/blob/main/Notes.md)
+[Itt találod a részletes leírást, mit és hogyan csináltam.](https://github.com/Nagraggini/springboot-render/blob/main/HowToDoIt_Hungarian_version.md.md)
