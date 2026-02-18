@@ -23,7 +23,7 @@ It was running locally before, and now it's accessible online.
 ## Backend (Server-side)
 
 - Spring Boot application (DemoApplication.java)
-- Controller classes, e.g., UserController (if present), handling requests like /login, /register, etc.
+- Controller classes, e.g., UsersController (if present), handling requests like /login, /register, etc.
 - Model classes, e.g., User, Product, representing the data.
 - PostgreSQL+ JPA repositories for storing and querying data.
 - ORM: Hibernate (JPA)
@@ -44,10 +44,10 @@ Frontend (HTML + Thymeleaf)
 Spring Controller  
 │  
 ▼  
-Service / Business Logic  
+Controller (Business Logic)
 │  
 ▼  
-H2 Database (data)
+PostgreSQL Database (data)
 
 ## Local running
 
@@ -57,7 +57,7 @@ H2 Database (data)
 ./mvnw clean spring-boot:run
 ```
 
-### Rum with Docker
+### Run with Docker
 
 ```bash
 docker build -t springboot-render .
@@ -66,12 +66,12 @@ docker run -p 8080:8080 springboot-render
 
 ## Endpoints
 
-| Endpoint           | Description                              |
-| ------------------ | ---------------------------------------- |
-| `/`                | Main – start of the website              |
-| `/boots.html`      | Example static/dynamic page              |
-| `/users/view`      | List of users (if UserController exists) |
-| `/actuator/health` | Health check endpoint (Spring Actuator)  |
+| Endpoint           | Description                             |
+| ------------------ | --------------------------------------- |
+| `/add.html`        | Main site/dynamic page                  |
+| `/users/view`      | List of users                           |
+| `/users/add`       | Add new user                            |
+| `/actuator/health` | Health check endpoint (Spring Actuator) |
 
 # Technologies
 
@@ -80,6 +80,10 @@ docker run -p 8080:8080 springboot-render
 - Thymeleaf
 - PostgreSQL Database
 - Docker
+
+[I did it based on that.](https://www.youtube.com/watch?v=RK6aAjUMcl0&list=PLg7lel5LdVjyO7jk-4biyr0fqPVygTLOk)
+
+[Repository for the above youtube video.](https://github.com/bobbychansfu/springboot-render/tree/7d38d0343465661adceb6372591a8353717dfd5e)
 
 ## ////////////////////////////////////////////////////////////////////////////////////
 
@@ -94,7 +98,7 @@ A projekt célja, hogy bemutassa a dinamikus webalkalmazás készítését Sprin
 ## Dinamikus webalkalmazás mérföldkő
 
 Az első dinamikus webalkalmazásom most már élőben működik! 🚀
-Telepítve: 2026. február 15., 10:56.
+Elindítva: 2026. február 15., 10:56.
 
 Korábban csak lokálisan futott, most már online is elérhető.
 
@@ -105,7 +109,7 @@ Korábban csak lokálisan futott, most már online is elérhető.
 ## Backend (Szerveroldal)
 
 - Spring Boot alkalmazás (DemoApplication.java)
-- Controller osztályok, pl. UserController, amelyek kezelik a kéréseket (/login, /register stb.)
+- Controller osztályok, pl. UsersController, amelyek kezelik a kéréseket (/login, /register stb.)
 - Model osztályok, pl. User, Product, amelyek az adatokat reprezentálják
 - PostgreSQL adatbázis + JPA repository-k az adatok tárolásához és lekérdezéséhez
 - ORM: Hibernate (JPA)
@@ -126,9 +130,9 @@ Frontend (HTML + Thymeleaf)
 Spring Controller  
 │  
 ▼  
-Service / Üzleti logika  
+Controller (Üzleti logika)
 │  
 ▼  
 PostgreSQL adatbázis (adatok)
 
-[Itt találod a részletes leírást, mit és hogyan csináltam.](https://github.com/Nagraggini/springboot-render/blob/main/HowToDoIt_Hungarian_version.md.md)
+[Itt találod a részletes leírást, mit és hogyan csináltam.](https://github.com/Nagraggini/springboot-render/blob/main/HowToDoIt_Hungarian_version.md)
