@@ -57,7 +57,7 @@ H2 Database (data)
 ./mvnw clean spring-boot:run
 ```
 
-### How to install Docker?
+### Rum with Docker
 
 ```bash
 docker build -t springboot-render .
@@ -78,7 +78,7 @@ docker run -p 8080:8080 springboot-render
 - Java 17
 - Spring Boot
 - Thymeleaf
-- H2 Database
+- PostgreSQL Database
 - Docker
 
 ## ////////////////////////////////////////////////////////////////////////////////////
@@ -87,7 +87,7 @@ Hungarian version - Magyar verzió
 
 # Spring Boot Render Demo
 
-Ez egy egyszerű Spring Boot webalkalmazás, ami Thymeleaf sablonokat és beágyazott H2 adatbázist használ.
+Ez egy egyszerű Spring Boot webalkalmazás, ami Thymeleaf sablonokat és beágyazott PostgreSQL adatbázist használ.
 
 A projekt célja, hogy bemutassa a dinamikus webalkalmazás készítését Spring Boot-tal, és hogy deploy-olható legyen Dockerrel Render.com-on.
 
@@ -101,8 +101,6 @@ Korábban csak lokálisan futott, most már online is elérhető.
 [Látogasd meg az oldalam!](https://spring-render-s4f4.onrender.com/add.html)
 
 # Amit használtam:
-
-## Backend (Szerveroldal)
 
 ## Backend (Szerveroldal)
 
@@ -131,6 +129,6 @@ Spring Controller
 Service / Üzleti logika  
 │  
 ▼  
-H2 adatbázis (adatok)
+PostgreSQL adatbázis (adatok)
 
 [Itt találod a részletes leírást, mit és hogyan csináltam.](https://github.com/Nagraggini/springboot-render/blob/main/HowToDoIt_Hungarian_version.md.md)
