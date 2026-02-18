@@ -25,7 +25,8 @@ It was running locally before, and now it's accessible online.
 - Spring Boot application (DemoApplication.java)
 - Controller classes, e.g., UserController (if present), handling requests like /login, /register, etc.
 - Model classes, e.g., User, Product, representing the data.
-- H2 database + JPA repositories for storing and querying data.
+- PostgreSQL+ JPA repositories for storing and querying data.
+- ORM: Hibernate (JPA)
 - Business logic, e.g., checking user.name values or saving users.
 
 ## Frontend (User Interface)
@@ -48,7 +49,7 @@ Service / Business Logic
 ▼  
 H2 Database (data)
 
-## Lokális futtatás
+## Local running
 
 ### Maven
 
@@ -56,7 +57,7 @@ H2 Database (data)
 ./mvnw clean spring-boot:run
 ```
 
-### How tó ide Docker?
+### How to install Docker?
 
 ```bash
 docker build -t springboot-render .
@@ -103,10 +104,13 @@ Korábban csak lokálisan futott, most már online is elérhető.
 
 ## Backend (Szerveroldal)
 
+## Backend (Szerveroldal)
+
 - Spring Boot alkalmazás (DemoApplication.java)
-- Controller osztályok, pl. UserController (ha van), amelyek kezelik a kéréseket, mint például /login, /register stb.
+- Controller osztályok, pl. UserController, amelyek kezelik a kéréseket (/login, /register stb.)
 - Model osztályok, pl. User, Product, amelyek az adatokat reprezentálják
-- H2 adatbázis + JPA repository-k az adatok tárolásához és lekérdezéséhez
+- PostgreSQL adatbázis + JPA repository-k az adatok tárolásához és lekérdezéséhez
+- ORM: Hibernate (JPA)
 - Üzleti logika, pl. user.name értékek ellenőrzése vagy felhasználók mentése
 
 ## Frontend (Felhasználói felület)
