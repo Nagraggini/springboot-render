@@ -271,3 +271,8 @@ Database
  │  
  ▼  
 HTML response: showAll.html
+
+## Struktúra
+
+Frontend -> Controller -> Adatbázis  
+(Külön Service osztály nincs, a logika a Controller-ben van.)
