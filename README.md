@@ -16,7 +16,7 @@ Deployed on February 15, 2026 at 10:56 AM.
 
 It was running locally before, and now it's accessible online.
 
-[Visit my site!](https://spring-render-s4f4.onrender.com/add.html)
+[The link is no longer available.](https://spring-render-s4f4.onrender.com/add.html)
 
 # I used:
 
@@ -102,7 +102,7 @@ Elindítva: 2026. február 15., 10:56.
 
 Korábban csak lokálisan futott, most már online is elérhető.
 
-[Látogasd meg az oldalam!](https://spring-render-s4f4.onrender.com/add.html)
+[A link már nem elérhető.](https://spring-render-s4f4.onrender.com/add.html)
 
 # Amit használtam:
 
