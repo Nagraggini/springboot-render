@@ -135,4 +135,4 @@ Controller (Üzleti logika)
 ▼  
 PostgreSQL adatbázis (adatok)
 
-[Itt találod a részletes leírást, mit és hogyan csináltam.](https://github.com/Nagraggini/springboot-render/blob/main/HowToDoIt_Hungarian_version.md)
+# 🇭🇺 Részletes magyar nyelvű útmutató a beállításhoz: [Kattints ide!](https://github.com/Nagraggini/springboot-render/blob/main/HowToDoIt_Hungarian_version.md)
